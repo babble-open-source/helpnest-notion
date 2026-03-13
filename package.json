@@ -1,13 +1,20 @@
 {
-  "name": "helpnest-notion",
+  "name": "@helpnest/notion",
+  "publishConfig": { "access": "public" },
   "version": "0.1.0",
   "description": "Migrate Notion pages to HelpNest",
   "type": "module",
-  "bin": { "helpnest-notion": "./dist/index.js" },
+  "bin": {
+    "helpnest-notion": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsx src/index.ts",
-    "lint": "eslint src --ext .ts"
+    "lint": "eslint src --ext .ts",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.15",
