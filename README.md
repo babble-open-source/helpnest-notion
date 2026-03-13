@@ -1,4 +1,4 @@
-# helpnest-notion
+# @helpnest/notion
 
 Migrate your Notion pages and databases into [HelpNest](https://github.com/babble-open-source/helpnest) — the open-source customer help center.
 
@@ -7,9 +7,9 @@ Converts Notion databases → HelpNest Collections and Notion pages → HelpNest
 ## Installation
 
 ```bash
-npm install -g helpnest-notion
+npm install -g @helpnest/notion
 # or run directly
-npx helpnest-notion <command>
+npx @helpnest/notion <command>
 ```
 
 ## Prerequisites
@@ -31,7 +31,7 @@ cp .env.example .env
 List all Notion databases your integration can access:
 
 ```bash
-npx helpnest-notion list-databases --notion-key secret_xxx
+npx @helpnest/notion list-databases --notion-key secret_xxx
 ```
 
 Use the database IDs from this output with the `--database` flag.
@@ -42,7 +42,7 @@ Migrate Notion content into HelpNest:
 
 ```bash
 # Migrate a specific database
-npx helpnest-notion migrate \
+npx @helpnest/notion migrate \
   --notion-key secret_xxx \
   --helpnest-url https://help.yourcompany.com \
   --helpnest-key hn_live_xxx \
@@ -50,17 +50,17 @@ npx helpnest-notion migrate \
   --database your-notion-database-id
 
 # Migrate all accessible pages
-npx helpnest-notion migrate \
+npx @helpnest/notion migrate \
   --notion-key secret_xxx \
   --helpnest-url https://help.yourcompany.com \
   --helpnest-key hn_live_xxx \
   --workspace your-workspace-slug
 
 # Dry run — preview without writing
-npx helpnest-notion migrate ... --dry-run
+npx @helpnest/notion migrate ... --dry-run
 
 # Resumable — saves progress to a state file
-npx helpnest-notion migrate ... --state ./migration-state.json
+npx @helpnest/notion migrate ... --state ./migration-state.json
 ```
 
 **Flags:**
